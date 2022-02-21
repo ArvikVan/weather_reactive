@@ -1,4 +1,4 @@
-
+[![CI](https://github.com/ArvikVan/weather_reactive/actions/workflows/Createmain.yml/badge.svg?branch=master)](https://github.com/ArvikVan/weather_reactive/actions/workflows/Createmain.yml)
 ### Weather_reactive
 
 Приложение прогноз погоды. Работать оно будет в режиме реактивного программирования.
@@ -18,4 +18,4 @@
 - GitHub Action
 - Spring MVC, Security, Boot
 - REST
-# weather_reactive
+# weatherreactive
