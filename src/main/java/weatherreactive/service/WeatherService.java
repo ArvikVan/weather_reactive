@@ -5,14 +5,16 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import weatherreactive.model.Weather;
 
+import java.util.Comparator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 /**
  * @author ArvikV
- * @version 1.0
+ * @version 1.1
  * @since 21.02.2022
+ * нахождение самого горячего переделано на стримы
  */
 @Service
 public class WeatherService {
@@ -35,16 +37,13 @@ public class WeatherService {
      * ищем самый горячий город
      * @return на выходе город с самой высокой температурой
      * tempTemperaturen эталонный с которым начинаем сравнивать
-     * бежим по мапе и сравниваем с эталоном, если больше меняем эталон
+     * бежим по мапе и сравниваем с эталоном, если больше меняем эталон(переделано на стримчанский)
+     * вызываем стрим значений и назожим максимальное сравнивая температуры
      */
     public Mono<Weather> findHottestCity() {
-        Weather tempTemperaturen = new Weather(0, "", 0);
-        for (Weather value : weathers.values()) {
-            if (value.getTemperature() > tempTemperaturen.getTemperature()) {
-                tempTemperaturen = value;
-            }
-        }
-        return Mono.just(tempTemperaturen);
+        return Mono.just(weathers.values()
+                .stream()
+                .max(Comparator.comparing(Weather::getTemperature)).get());
     }
 
     public Flux<Weather> all() {
