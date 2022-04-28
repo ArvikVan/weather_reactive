@@ -1,5 +1,5 @@
 [![CI](https://github.com/ArvikVan/weather_reactive/actions/workflows/Createmain.yml/badge.svg?branch=master)](https://github.com/ArvikVan/weather_reactive/actions/workflows/Createmain.yml)
-### Weather_reactive
+## Weather_reactive
 
 Приложение прогноз погоды. Работать оно будет в режиме реактивного программирования.
 
@@ -17,13 +17,16 @@
 4. Список город с валидацией
 <br>
 ![](img/4.png)
-### Контакты для связи<br>
+<br>
+## Контакты для связи<br>
 <img src="https://img.icons8.com/clouds/100/000000/gmail-new.png" width="10"/> arvikvan@gmail.com<br>
 <img src="https://img.icons8.com/color/100/000000/telegram-app--v2.png" width="10"/> @ArvikV
+<br>
 
-###Используемые технологии:
+## Используемые технологии:
 - Maven
 - GitHub Action
-- Spring MVC, Security, Boot
+- Spring Boot
+- Hibernate
 - REST
-# weatherreactive
+## weatherreactive
